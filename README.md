@@ -18,21 +18,21 @@ Um aplicativo móvel com funcionalidades de trivia (perguntas e respostas) e um 
 
 **Front-end:** Interface intuitiva e interativa para o usuário.
 
-**Back-end:** Integração com a Open Trivia Database API para obter as questões, gerenciamento de usuários, pontuações e flashcards (armazenados localmente ou por meio de um serviço em nuvem gratuito, como o Firebase).
+**Back-end:** Integração com a Open Trivia Database API para obter as questões, gerenciamento de pontuações, progresso e flashcards (armazenados localmente ou por meio de um serviço em nuvem gratuito, como o Firebase).
 
 # Requisitos da Aplicação
 ### Requisitos Funcionais
 
-**Autenticação e Gerenciamento de Perfil:**
+**Gerenciamento de Perfil:**
 
-> Cadastro, login e edição de perfil do usuário.
+> Edição de perfil e preferencias do usuário.
 
 **Módulo Trivia:**
 > Consumir a Open Trivia Database API (https://opentdb.com/api_config.php) para exibir perguntas em múltipla escolha, verdadeiro ou falso, etc.
 
 > Exibir feedback imediato sobre respostas corretas ou incorretas.
 
-> Registrar a pontuação e atualizar um ranking/leaderboard.
+> Registrar a pontuação e atualizar um progresso.
 
 **Módulo Flashcards:**
 
@@ -54,10 +54,6 @@ Um aplicativo móvel com funcionalidades de trivia (perguntas e respostas) e um 
 **Usabilidade:**
 
 > A interface deve ser intuitiva, acessível e adaptada para dispositivos móveis.
-
-**Segurança:**
-
-> Os dados dos usuários (login, progresso, flashcards) devem ser protegidos, utilizando autenticação segura.
 
 **Confiabilidade:**
 
