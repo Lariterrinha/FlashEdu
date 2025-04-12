@@ -25,7 +25,9 @@ Apresenta a visão geral da interação entre os usuários, o sistema e os servi
 - O sistema consome dados da **API Open TriviaDB** para gerar quizzes.
 - Os dados de progresso são armazenados localmente em um **banco SQLite** no dispositivo do usuário.
 
-![Diagrama de Contexto](Context.jpg)
+<p>
+  <img src="Context.jpg" width="300" />
+</p>
 
 ### Nível 2 – Diagrama de Containers
 
