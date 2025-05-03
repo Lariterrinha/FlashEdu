@@ -1,7 +1,16 @@
 import 'package:flashedu/AboutTheApp.dart';
+import 'package:flashedu/trivia_page.dart';
+import 'package:flashedu/userPreferencesService.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await UserPreferencesService.loadPreferences();
+  } catch (e) {
+    print("Error loading db: $e");
+  }
   runApp(const MyApp());
 }
 
@@ -15,8 +24,9 @@ class MyApp extends StatelessWidget{
       title: 'FlashEdu',
       theme: ThemeData(primarySwatch: Colors.deepPurple),
       debugShowCheckedModeBanner: false,
-      home: Abouttheapp(),
+      home: UserPreferencesService.getIsFirstOpen ? Abouttheapp(): HomePage() ,
 
     );
   }
+
 }

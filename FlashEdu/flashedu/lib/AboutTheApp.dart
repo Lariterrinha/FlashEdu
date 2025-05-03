@@ -1,6 +1,7 @@
 import 'package:flashedu/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'userPreferencesService.dart';
 
 class Abouttheapp extends StatefulWidget {
   @override
@@ -11,6 +12,7 @@ class _AbouttheappState extends State<Abouttheapp> {
   final PageController _controller = PageController();
 
   void _onContinue() {
+    UserPreferencesService.markAppOpened();
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
