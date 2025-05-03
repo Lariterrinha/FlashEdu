@@ -8,8 +8,8 @@ Criação de um primeiro entregável (software que funciona).
 
 ### |-------- Tema --------|------- Resposta correta --------|------ Respostas erradas ------|
 <p>
-<img src="Videos/gif/theme.gif" width="32%" height="50%">
-<img src="Videos/gif/trivia_correct.gif" width="32%" height="50%">
-<img src="Videos/gif/trivia_wrong.gif" width="32%" height="50%">
+<img src="gif/theme.gif" width="32%" height="50%">
+<img src="gif/trivia_correct.gif" width="32%" height="50%">
+<img src="gif/trivia_wrong.gif" width="32%" height="50%">
 </p>
 
