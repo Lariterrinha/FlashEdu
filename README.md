@@ -62,31 +62,59 @@ Um aplicativo móvel com funcionalidades de trivia (perguntas e respostas) e um 
 ## Estrutura do Repositório
 
 ├───README.md
+
 │
+
 ├───Arquitetura
+
 │       Components.jpg
+
 │       Containers.jpg
+
 │       Context.jpg
+
 │       Descrição_arquitetura.md
+
 │
+
 ├───FlashEdu
+
 │   └───flashedu
+
 │       ├───pubspec.yaml (aquivo de configurações flutter)
+
 │       │
+
 │       ├───assets (imagens)
+
 │       │       logo.png
+
 │       │       logo1-removebg-preview - Copia.png
+
 │       │
+
 │       └───lib (codigos dart)
+
 │              AboutTheApp.dart
+
 │              config_page.dart
+
 │              flashcard_page.dart
+
 │              home_page.dart
+
 │              main.dart
+
 │              scoreTracker.dart
+
 │              trivia_page.dart
+
 │              userPreferencesService.dart
+
 │ 
+
 └───Videos (Contém os videos de detelhes do projeto.)
+
         ├───Desenvolvimento_1.mp4
+        
         ├───README.md 
