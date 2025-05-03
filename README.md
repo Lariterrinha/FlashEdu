@@ -28,7 +28,7 @@ Um aplicativo móvel com funcionalidades de trivia (perguntas e respostas) e um 
 > Edição de perfil e preferencias do usuário.
 
 **Módulo Trivia:**
-> Consumir a Open Trivia Database API (https://opentdb.com/api_config.php) para exibir perguntas em múltipla escolha, verdadeiro ou falso, etc.
+> Consumir a Open Trivia Database API (https://opentdb.com/api_config.php) para exibir perguntas em múltipla escolha.
 
 > Exibir feedback imediato sobre respostas corretas ou incorretas.
 
@@ -49,7 +49,7 @@ Um aplicativo móvel com funcionalidades de trivia (perguntas e respostas) e um 
 ### Requisitos Não Funcionais
 **Desempenho:**
 
-> As requisições à API devem retornar em, no máximo, 3 segundos.
+> As requisições à API devem retornar em, no máximo, 3 segundos, caso o usuario tenha internet.
 
 **Usabilidade:**
 
@@ -57,7 +57,7 @@ Um aplicativo móvel com funcionalidades de trivia (perguntas e respostas) e um 
 
 **Confiabilidade:**
 
-> Garantir uma disponibilidade de 99% durante os períodos de uso ativo.
+> Garantir disponibilidade nos períodos de uso ativo.
 
 ## Estrutura do Repositório
 
