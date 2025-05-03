@@ -1,3 +1,4 @@
+import 'package:flashedu/AboutTheApp.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 void main() {
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FlashEdu',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: Abouttheapp(),
 
     );
   }

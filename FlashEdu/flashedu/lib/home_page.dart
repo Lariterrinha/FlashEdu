@@ -1,3 +1,4 @@
+import 'package:flashedu/userPreferencesService.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flashedu/trivia_page.dart';
@@ -12,7 +13,10 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
-  int _selectedIndex = 0;
+
+  Color selectedColor = Colors.blueGrey;
+
+  int _selectedIndex = 2;
 
   int get selectedIndex => _selectedIndex;
 
@@ -45,6 +49,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   void initState() {
     super.initState();
     pageController = PageController(initialPage: _selectedIndex);
+
   }
 
   @override
@@ -66,8 +71,8 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
             color: Colors.white70,
             ),
           // circleWidth: 60,
-          circleColor: Colors.blueGrey,
-          color: Colors.blueGrey,
+          circleColor: UserPreferencesService.getThemeColor(),
+          color: UserPreferencesService.getThemeColor(),
           tabCurve: Curves.decelerate,
           iconCurve: Easing.linear,
           tabDurationMillSec: 500,
@@ -82,14 +87,18 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
         ),
           body: PageView(
             controller: pageController,
+            physics: const NeverScrollableScrollPhysics(),
             onPageChanged: (v) {
               setState(() {
                 _selectedIndex = v;
               });
             },
             children: pages,
+
           ),
       );
 
   }
+
+
 }
