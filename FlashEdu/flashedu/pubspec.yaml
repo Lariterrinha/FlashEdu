@@ -41,6 +41,7 @@ dependencies:
   sqflite: ^2.2.0+1
   swipeable_card_stack: ^0.0.5
   smooth_page_indicator: ^1.2.1
+  flutter_card_swiper: ^7.0.2
 
 
 dev_dependencies:
