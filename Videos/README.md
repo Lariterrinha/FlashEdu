@@ -6,10 +6,6 @@ Criação de um primeiro entregável (software que funciona).
 
 ## SnapShots
 
-### |-------------- Tema --------------|--------- Resposta correta ----------|-------- Respostas erradas --------|
-<p>
-<img src="gif/theme.gif" width="32%" height="50%">
-<img src="gif/trivia_correct.gif" width="32%" height="50%">
-<img src="gif/trivia_wrong.gif" width="32%" height="50%">
-</p>
-
+| Tema | Resposta correta | Respostas erradas |
+| ---------------------- | :------------- | :---------------- |
+<img src="gif/theme.gif" width="32%" height="50%"> | <img src="gif/trivia_correct.gif" width="32%" height="50%"> | <img src="gif/trivia_wrong.gif" width="32%" height="50%">|
