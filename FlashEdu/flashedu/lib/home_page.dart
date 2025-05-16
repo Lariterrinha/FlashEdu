@@ -1,9 +1,10 @@
-import 'package:flashedu/userPreferencesService.dart';
+import 'package:flashedu/Flashcards/folder_list_page.dart';
+import 'package:flashedu/Settings/userPreferencesService.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flashedu/trivia_page.dart';
-import 'package:flashedu/flashcard_page.dart';
-import 'package:flashedu/config_page.dart';
+import 'package:flashedu/Trivia/trivia_page.dart';
+import 'package:flashedu/Flashcards/flashcard_page.dart';
+import 'package:flashedu/Settings/config_page.dart';
 
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 
@@ -41,7 +42,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   // paginas
   final List<Widget> pages = [
       TriviaPage(),
-      FlashcardPage(),
+      FolderListPage(),
       ConfigPage(),
   ];
 
@@ -97,8 +98,5 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
 
           ),
       );
-
   }
-
-
 }

@@ -1,8 +1,8 @@
-import 'package:flashedu/userPreferencesService.dart';
+import 'package:flashedu/Settings/userPreferencesService.dart';
 import 'package:flutter/material.dart';
 
-import 'AboutTheApp.dart';
-import 'home_page.dart';
+import '../AboutTheApp.dart';
+import '../home_page.dart';
 
 class ConfigPage extends StatefulWidget {
   @override

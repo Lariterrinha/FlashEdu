@@ -1,6 +1,6 @@
 import 'package:flashedu/AboutTheApp.dart';
-import 'package:flashedu/trivia_page.dart';
-import 'package:flashedu/userPreferencesService.dart';
+import 'package:flashedu/Trivia/trivia_page.dart';
+import 'package:flashedu/Settings/userPreferencesService.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
