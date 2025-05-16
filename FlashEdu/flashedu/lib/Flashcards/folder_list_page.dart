@@ -89,7 +89,7 @@ class CreateFolderPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(children: [
-          TextField(controller: _controller, decoration: InputDecoration(labelText: 'Nome da pasta')),
+          TextField(controller: _controller, decoration: InputDecoration(labelText: 'Folder Name')),
           ElevatedButton(
             child: Text('Save'),
             onPressed: () async {
