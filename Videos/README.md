@@ -1,3 +1,6 @@
+
+
+## Videos Sprints 
 TP3 - Sprint de Desenvolvimento
 Criação de um primeiro entregável (software que funciona).
 
@@ -6,11 +9,15 @@ Criação de um primeiro entregável (software que funciona).
 
 
 TP4 - Sprint de Desenvolvimento + Plano de testes
+
 [▶️ Ver vídeo de demonstração](Desenvolvimento_2.mp4)
 [▶️ Ver o vídeo no youtube](https://www.youtube.com)
 
+## Plano de Testes
 
-## SnapShots
+[▶️ Ir para pagina](https://github.com/Lariterrinha/FlashEdu/tree/main/Testes_de_software)
+
+## SnapShots 
 
 | Tema | Resposta correta | Respostas erradas |
 | ---------------------- | :------------- | :---------------- |
