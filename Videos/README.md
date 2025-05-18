@@ -24,4 +24,4 @@ TP4 - Sprint de Desenvolvimento + Plano de testes
 
 | Novo Flashcard | Varios flashcards | Tema diferente |
 | ---------------------- | :------------- | :---------------- |
-<img src="gif/new_flashcards.gif" width="100%" height="50%"> | <img src="gif/multiple_flashcards.gif" width="100%" height="50%"> | <img src="gif/flashcard_vvermelho.gif" width="100%" height="50%">|
+<img src="gif/new_flashcards.gif" width="100%" height="50%"> | <img src="gif/multiple_flashcards.gif" width="100%" height="50%"> | <img src="gif/flashcard_vermelho.gif" width="100%" height="50%">|
