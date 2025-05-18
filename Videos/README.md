@@ -10,7 +10,6 @@ Criação de um primeiro entregável (software que funciona).
 
 TP4 - Sprint de Desenvolvimento + Plano de testes
 
-[▶️ Ver vídeo de demonstração](Desenvolvimento_2.mp4)
 [▶️ Ver o vídeo no youtube](https://www.youtube.com/watch?v=0OWa-CxAW0Y)
 
 ## Plano de Testes
