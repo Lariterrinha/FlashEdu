@@ -11,11 +11,11 @@ Criação de um primeiro entregável (software que funciona).
 TP4 - Sprint de Desenvolvimento + Plano de testes
 
 [▶️ Ver vídeo de demonstração](Desenvolvimento_2.mp4)
-[▶️ Ver o vídeo no youtube](https://www.youtube.com)
+[▶️ Ver o vídeo no youtube](https://www.youtube.com/watch?v=0OWa-CxAW0Y)
 
 ## Plano de Testes
 
-[▶️ Ir para pagina](https://github.com/Lariterrinha/FlashEdu/tree/main/Testes_de_software)
+[▶️ Ir para pagina de Testes](https://github.com/Lariterrinha/FlashEdu/tree/main/Testes_de_software)
 
 ## SnapShots 
 
