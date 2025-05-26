@@ -13,7 +13,7 @@ void main() {
     UserPreferencesService.isFirstOpen = true;
   });
 
-  testWidgets('Botão de continuar aparece na última página', (WidgetTester tester) async {
+  testWidgets('TC5.1 e TC5.2 - Testa Swipe entre pagias e o botão de continuar aparece na quarta e ultima página', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
 
     // Navega até a última página (4 páginas no total → 3 swipes)
@@ -26,7 +26,7 @@ void main() {
     expect(find.text('Continue'), findsOneWidget);
   });
 
-  testWidgets('Botão de continuar navega para a HomePage', (WidgetTester tester) async {
+  testWidgets('TC5.3 - Botão de continuar navega para a HomePage', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
 
     // Navega até a última página

@@ -12,7 +12,7 @@ void main() {
     await UserPreferencesService.loadPreferences();
   });
 
-  testWidgets('Verifica mensagem e botão de criar pasta', (tester) async {
+  testWidgets('TC6.1 - Verifica mensagem e botão de criar pasta', (tester) async {
     await tester.pumpWidget(MaterialApp(home: FolderListPage()));
 
     // Verifica se mostra a mensagem de "sem pastas"
@@ -22,7 +22,7 @@ void main() {
     expect(find.byIcon(Icons.create_new_folder), findsOneWidget);
   });
 
-  testWidgets('Navega para a tela de criar pasta', (tester) async {
+  testWidgets('TC5.2 Navega para a tela de criar pasta', (tester) async {
     await tester.pumpWidget(MaterialApp(home: FolderListPage()));
 
     await tester.tap(find.byIcon(Icons.create_new_folder));
