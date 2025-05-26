@@ -65,34 +65,65 @@
  ## Estrutura do Repositório
  
  ```bash
- .
- ├── README.md
- │
- ├── Arquitetura
- │       Components.jpg
- │       Containers.jpg
- │       Context.jpg
- │       Descrição_arquitetura.md
- │
- ├── FlashEdu
- │   └── flashedu
- │       ├── pubspec.yaml (arquivo de configurações Flutter)
- │       │
- │       ├── assets (imagens)
- │       │       logo.png
- │       │       logo1-removebg-preview - Copia.png
- │       │
- │       └── lib (códigos Dart)
- │              AboutTheApp.dart
- │              config_page.dart
- │              flashcard_page.dart
- │              home_page.dart
- │              main.dart
- │              scoreTracker.dart
- │              trivia_page.dart
- │              userPreferencesService.dart
- │ 
- └── Videos (Contém os vídeos de detalhes do projeto.)
-         ├── Desenvolvimento_1.mp4
-         ├── README.md
- ```
+
+│   README.md
+│
+├───Arquitetura
+│       Components.jpg
+│       Containers.jpg
+│       Context.jpg
+│       README.md
+│
+├───FlashEdu (Componentes do aplicativo + testes de software)
+│   └───flashedu
+│       │   pubspec.lock
+│       │   pubspec.yaml
+│       │
+│       ├── assets (imagens)
+│       │   │   logo.png
+│       │
+│       ├───lib
+│       │   │   AboutTheApp.dart
+│       │   │   home_page.dart
+│       │   │   main.dart
+│       │   │
+│       │   ├───Flashcards
+│       │   │       db_helper.dart
+│       │   │       flashcard_page.dart
+│       │   │       folder_list_page.dart
+│       │   │
+│       │   ├───models
+│       │   │       flashcard.dart
+│       │   │       folder.dart
+│       │   │
+│       │   ├───Settings
+│       │   │       config_page.dart
+│       │   │       userPreferencesService.dart
+│       │   │
+│       │   └───Trivia
+│       │           scoreTracker.dart
+│       │           trivia_page.dart
+│       │
+│       └───test
+│               AboutTheApp_test.dart
+│               Flashcards_test.dart
+│
+├───Testes_de_software
+│       README.md
+│
+└───Videos  (Contém os vídeos de detalhes do projeto.)
+    │   Desenvolvimento_1.mp4
+    │   README.md
+    │
+    └───gif
+            emptyfolder.gif
+            flashcard_roxo.gif
+            flashcard_vermelho.gif
+            multiple_flashcards.gif
+            multiple_folders.gif
+            newfolder.gif
+            new_flashcards.gif
+            theme.gif
+            trivia_correct.gif
+            trivia_wrong.gif
+```
