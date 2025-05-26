@@ -46,4 +46,21 @@ Este documento apresenta os casos de teste elaborados para os principais casos d
 | TC4.2 | Selecionar tema  | Botão de Cores (configurações) muda a cor dos flashcards | Aplicativo muda para escolhido | Aprovado ✅ |
 | TC4.3 | Preferência salva no banco | Troca de tema | Preferência registrada no SQLite | Não testado |
 
+---
 
+## 🧪 Caso de Uso 5: Tela "Sobre o App"
+
+| ID do Teste | Descrição | Entrada | Resultado Esperado | Status |
+|-------------|-----------|---------|---------------------|--------|
+| TC5.1 | Acessar carrossel informativo | Abertura da tela Sobre o App | Exibe 3 páginas informativas | Aprovado ✅ |
+| TC5.2 | Navegar entre páginas do carrossel | Swipe | Avança e retorna entre as páginas corretamente | Aprovado ✅ |
+| TC5.3 | Botão "Continue" | Clique no botão na última página | Navega para a tela principal `/tela_principal` | Aprovado ✅ |
+
+---
+
+## 📁 Caso de Uso 6: Manipulação de pastas
+
+| ID do Teste | Descrição | Entrada | Resultado Esperado | Status |
+|-------------|-----------|---------|---------------------|--------|
+| TC6.1 | Se não houver pastas exime e=mengagem de que não há | Tela com mensagem padrão | Exibir tela no caso inicial | Aprovado ✅ |
+| TC6.2 | Adicionar pasta | Clicar no botão de adicionar pastas | Redirecionado para a pagina de criar pastas | Aprovado ✅ |
