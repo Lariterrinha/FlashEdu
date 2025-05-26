@@ -62,5 +62,5 @@ Este documento apresenta os casos de teste elaborados para os principais casos d
 
 | ID do Teste | Descrição | Entrada | Resultado Esperado | Status |
 |-------------|-----------|---------|---------------------|--------|
-| TC6.1 | Se não houver pastas exime e=mengagem de que não há | Tela com mensagem padrão | Exibir tela no caso inicial | Aprovado ✅ |
+| TC6.1 | Se não houver pastas exibe a mengagem de que não há | Tela com mensagem padrão | Exibir tela no caso inicial | Aprovado ✅ |
 | TC6.2 | Adicionar pasta | Clicar no botão de adicionar pastas | Redirecionado para a pagina de criar pastas | Aprovado ✅ |
