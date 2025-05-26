@@ -69,4 +69,26 @@ class DatabaseHelper {
   getAllFolders() {
     return getFolders();
   }
+
+
+  // Delete folder
+  Future<int> deleteFolder(int folderId) async {
+    final dbClient = await db;
+    // Delete flashcards in the folder
+    await dbClient.delete('flashcards', where: 'folder_id = ?', whereArgs: [folderId]);
+    // Delete folder
+    return await dbClient.delete('folders', where: 'id = ?', whereArgs: [folderId]);
+  }
+
+
+  // Update name of the folder
+  Future<int> updateFolder(Folder folder) async {
+    final dbClient = await db;
+    return await dbClient.update(
+      'folders',
+      folder.toMap(),
+      where: 'id = ?',
+      whereArgs: [folder.id],
+    );
+  }
 }

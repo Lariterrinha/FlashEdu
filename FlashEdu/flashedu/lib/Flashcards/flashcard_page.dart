@@ -21,6 +21,7 @@ class _FlashcardPageState extends State<FlashcardPage> {
   int indexFlashcards = 0;
 
   FlashCard buildFlashCard(Flashcard fc, Size screen) {
+
     return FlashCard(
       width: screen.width * 0.9,
       height: screen.height * 0.5,

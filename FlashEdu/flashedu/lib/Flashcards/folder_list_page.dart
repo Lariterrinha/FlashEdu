@@ -23,6 +23,9 @@ class _FolderListPageState extends State<FolderListPage> {
 
   Future<void> loadFolders() async {
     final data = await DatabaseHelper().getAllFolders();
+
+    if (!mounted) return; // impede setState se widget foi desmontado
+
     setState(() {
       folders = data;
     });
@@ -37,6 +40,83 @@ class _FolderListPageState extends State<FolderListPage> {
     loadFolders(); // Recarrega após voltar
   }
 
+  // Função para editar o nome da pasta
+  Future<void> _editFolder(Folder folder) async {
+    TextEditingController controller = TextEditingController(text: folder.name);
+
+    bool? updated = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Edit Folder Name'),
+          content: TextField(
+            controller: controller,
+            decoration: InputDecoration(labelText: 'Folder Name'),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context, true);
+              },
+              child: Text('Save'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (updated == true) {
+      final folderName = controller.text.trim();
+      if (folderName.isNotEmpty) {
+        folder.name = folderName;
+        await DatabaseHelper().updateFolder(folder);
+        loadFolders(); // Recarrega após edição
+      }
+    }
+  }
+
+
+
+  // Função para excluir a pasta
+  Future<void> _deleteFolder(Folder folder) async {
+    final confirmDelete = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Delete Folder'),
+          content: Text('Are you sure you want to delete this folder?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context, true);
+              },
+              child: Text('Delete'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (confirmDelete == true) {
+      await DatabaseHelper().deleteFolder(folder.id!);
+      loadFolders(); // Recarrega após deletar
+    }
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +125,8 @@ class _FolderListPageState extends State<FolderListPage> {
         backgroundColor: UserPreferencesService.getThemeColor(),
         iconTheme: IconThemeData(color: Colors.white),
       ),
+
+
       body: folders.isEmpty
           ? Center(child: Text('No folders yet. Tap + to create one.'))
           : ListView.builder(
@@ -58,9 +140,30 @@ class _FolderListPageState extends State<FolderListPage> {
             );
           },
           leading: Icon(Icons.folder),
-            title: Text(folders[index].name),
+          title: Text(folders[index].name),
+          trailing: PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'edit') {
+                _editFolder(folders[index]);
+              } else if (value == 'delete') {
+                _deleteFolder(folders[index]);
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem<String>(
+                value: 'edit',
+                child: Text('Edit'),
+              ),
+              PopupMenuItem<String>(
+                value: 'delete',
+                child: Text('Delete'),
+              ),
+            ],
+          ),
         ),
       ),
+
+
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 90.0), // Empurra o botão pra cima do nav
         child: FloatingActionButton(
@@ -71,16 +174,29 @@ class _FolderListPageState extends State<FolderListPage> {
           tooltip: 'Create a new folder',
         ),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+
     );
   }
 }
 
 
 // SUPPORT !
+class CreateFolderPage extends StatefulWidget {
+  @override
+  _CreateFolderPageState createState() => _CreateFolderPageState();
+}
 
-class CreateFolderPage extends StatelessWidget {
+class _CreateFolderPageState extends State<CreateFolderPage> {
   final TextEditingController _controller = TextEditingController();
+
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +207,18 @@ class CreateFolderPage extends StatelessWidget {
         child: Column(children: [
           TextField(controller: _controller, decoration: InputDecoration(labelText: 'Folder Name')),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: UserPreferencesService.getThemeColor(), foregroundColor: Colors.white),
             child: Text('Save'),
             onPressed: () async {
-              await DatabaseHelper().insertFolder(Folder(name: _controller.text));
-              Navigator.pop(context);
+              final folderName = _controller.text.trim();
+              if (folderName.isNotEmpty) {
+                final dbHelper = DatabaseHelper();
+                await dbHelper.insertFolder(Folder(name: folderName));
+
+                if (context.mounted) {
+                  Navigator.pop(context); // Só navega se o contexto ainda existir
+                }
+              }
             },
           )
         ]),
