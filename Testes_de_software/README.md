@@ -2,6 +2,9 @@
 
 Este documento apresenta os casos de teste elaborados para os principais casos de uso do aplicativo de Trivia.
 
+## Snapshots dos testes
+
+[▶️ Ir para pagina com Snapshots](https://github.com/Lariterrinha/FlashEdu/blob/main/Videos/README.md)
 ---
 
 "Status": `Aprovado ✅`, `Reprovado ❌`, `Não testado ⏳`.
