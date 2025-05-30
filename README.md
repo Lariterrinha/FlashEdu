@@ -48,10 +48,6 @@
  > Permitir ao usuário escolher categorias e níveis de dificuldade para os quizzes.
  
  ### Requisitos Não Funcionais
- **Desempenho:**
- 
- > As requisições à API devem retornar em, no máximo, 3 segundos.
- > As requisições à API devem retornar em, no máximo, 3 segundos, caso o usuario tenha internet.
  
  **Usabilidade:**
  
@@ -59,7 +55,6 @@
  
  **Confiabilidade:**
  
- > Garantir uma disponibilidade de 99% durante os períodos de uso ativo.
  > Garantir disponibilidade nos períodos de uso ativo.
  
  ## Estrutura do Repositório
