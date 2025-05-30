@@ -12,6 +12,12 @@ TP4 - Sprint de Desenvolvimento + Plano de testes
 
 [▶️ Ver o vídeo no youtube](https://www.youtube.com/watch?v=0OWa-CxAW0Y)
 
+
+TP5 - Sprint de Desenvolvimento + Testes
+
+[▶️ Ver o vídeo no youtube](https://www.youtube.com/watch?v=Z2Wdtv5qX88)
+
+
 ## Plano de Testes
 
 [▶️ Ir para pagina de Testes](https://github.com/Lariterrinha/FlashEdu/tree/main/Testes_de_software)
