@@ -26,14 +26,14 @@ TP5 - Sprint de Desenvolvimento + Testes
 
 | Tema | Resposta correta | Respostas erradas |
 | ---------------------- | :------------- | :---------------- |
-<img src="gif/theme.gif" width="100%" height="50%"> | <img src="gif/trivia_correct.gif" width="100%" height="50%"> | <img src="gif/trivia_wrong.gif" width="100%" height="50%">|
+<img src="gif/theme.gif" width="260" height="50%"> | <img src="gif/trivia_correct.gif" width="260" height="50%"> | <img src="gif/trivia_wrong.gif" width="260" height="50%">|
 
 
 | Pasta Vazia | Nova Pasta | Varias Pastas |
 | ---------------------- | :------------- | :---------------- |
-<img src="gif/emptyfolder.gif" width="100%" height="50%"> | <img src="gif/newfolder.gif" width="100%" height="50%"> | <img src="gif/multiple_folders.gif" width="100%" height="50%">|
+<img src="gif/emptyfolder.gif" width="260" height="50%"> | <img src="gif/newfolder.gif" width="260" height="50%"> | <img src="gif/multiple_folders.gif" width="260" height="50%">|
 
 
 | Novo Flashcard | Varios flashcards | Tema diferente |
 | ---------------------- | :------------- | :---------------- |
-<img src="gif/new_flashcards.gif" width="100%" height="50%"> | <img src="gif/multiple_flashcards.gif" width="100%" height="50%"> | <img src="gif/flashcard_vermelho.gif" width="100%" height="50%">|
+<img src="gif/new_flashcards.gif" width="260" height="50%"> | <img src="gif/multiple_flashcards.gif" width="260" height="50%"> | <img src="gif/flashcard_vermelho.gif" width="260" height="50%">|
