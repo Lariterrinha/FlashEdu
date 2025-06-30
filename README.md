@@ -1,6 +1,11 @@
 # FlashEdu
  FlashEdu – União entre FLASH (“Fun Learning And Study Hub”), e educação, enfatizando um espaço de estudo dinâmico.
- 
+
+ ### Pré-requisitos
+* [Flutter](https://flutter.dev/docs/get-started/install) (versão Flutter 3.29.0 -> revision 35c388afb5 )
+* Dart 3.7.0
+* DevTools 2.42.2
+* Um emulador Android/iOS ou um dispositivo físico
  
  ## Objetivo Geral:
  Desenvolver um aplicativo móvel de perguntas e respostas (trivia) que promova a educação de qualidade, alinhado ao ODS 4: Educação de Qualidade. O app utilizará a Open Trivia Database API para fornecer questões personalizadas e interativas, estimulando o aprendizado de forma divertida e dinâmica.
@@ -28,7 +33,6 @@
  > Edição de perfil e preferencias do usuário.
  
  **Módulo Trivia:**
- > Consumir a Open Trivia Database API (https://opentdb.com/api_config.php) para exibir perguntas em múltipla escolha, verdadeiro ou falso, etc.
  > Consumir a Open Trivia Database API (https://opentdb.com/api_config.php) para exibir perguntas em múltipla escolha.
  
  > Exibir feedback imediato sobre respostas corretas ou incorretas.
