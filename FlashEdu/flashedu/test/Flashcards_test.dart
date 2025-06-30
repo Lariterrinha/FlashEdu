@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
+
 void main() {
 
   setUpAll(() async {
@@ -22,7 +23,7 @@ void main() {
     expect(find.byIcon(Icons.create_new_folder), findsOneWidget);
   });
 
-  testWidgets('TC5.2 Navega para a tela de criar pasta', (tester) async {
+  testWidgets('TC6.2 Navega para a tela de criar pasta', (tester) async {
     await tester.pumpWidget(MaterialApp(home: FolderListPage()));
 
     await tester.tap(find.byIcon(Icons.create_new_folder));

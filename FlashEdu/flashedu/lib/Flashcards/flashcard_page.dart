@@ -8,143 +8,142 @@ import 'db_helper.dart';
 
 class FlashcardPage extends StatefulWidget {
   final Folder folder;
-  FlashcardPage({required this.folder});
+  const FlashcardPage({super.key, required this.folder});
 
   @override
   _FlashcardPageState createState() => _FlashcardPageState();
 }
 
 class _FlashcardPageState extends State<FlashcardPage> {
+  final SwipeableCardSectionController _controller = SwipeableCardSectionController();
+  List<FlashCard> _itens = [];
+  int _indexFlashcards = 0;
+  bool _isLoading = true;
 
-  SwipeableCardSectionController controller = SwipeableCardSectionController();
-  List<FlashCard> itens = [];
-  int indexFlashcards = 0;
-
-  FlashCard buildFlashCard(Flashcard fc, Size screen) {
-
-    return FlashCard(
-      width: screen.width * 0.9,
-      height: screen.height * 0.5,
-      frontWidget: () => Container(
-        decoration: BoxDecoration(
-          color: UserPreferencesService.getThemeColor(),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Center(
-          child: Text(fc.frontText,
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
-          ),
-        ),
-      ),
-      backWidget: () => Container(
-        decoration: BoxDecoration(
-          color: Color.lerp(UserPreferencesService.getThemeColor(), Colors.white, 0.3),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Center(
-          child: Text(fc.backText,
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
-          ),
-        ),
-      ),
-    );
+  @override
+  void initState() {
+    super.initState();
+    // Carrega os dados quando a tela é iniciada
+    _reloadData();
   }
 
+  // Função dedicada para carregar e recarregar os dados
+  Future<void> _reloadData() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    // Busca os dados atualizados do banco
+    final data = await DatabaseHelper().getFlashcardsByFolder(widget.folder.id!);
+    final screen = MediaQuery.of(context).size;
+
+    // Atualiza a lista de widgets
+    _itens = data.map((fc) {
+      return FlashCard(
+        width: screen.width * 0.9,
+        height: screen.height * 0.5,
+        frontWidget: () => Container(
+          decoration: BoxDecoration(
+            color: UserPreferencesService.getThemeColor(),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(fc.frontText,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  )),
+            ),
+          ),
+        ),
+        backWidget: () => Container(
+          decoration: BoxDecoration(
+            color:
+            Color.lerp(UserPreferencesService.getThemeColor(), Colors.white, 0.3),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(fc.backText,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  )),
+            ),
+          ),
+        ),
+      );
+    }).toList();
+
+    // Reseta o índice e finaliza o carregamento
+    setState(() {
+      _indexFlashcards = _itens.length >= 3 ? 3 : _itens.length;
+      _isLoading = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    Size screen = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: AppBar(
-          title: Text('Folder: ${widget.folder.name}', style: TextStyle(color: Colors.white)),
-          backgroundColor: UserPreferencesService.getThemeColor(),
-          iconTheme: IconThemeData(color: Colors.white),
+        title: Text('Pasta: ${widget.folder.name}',
+            style: const TextStyle(color: Colors.white)),
+        backgroundColor: UserPreferencesService.getThemeColor(),
+        iconTheme: const IconThemeData(color: Colors.white),
+        // Adiciona uma lista de widgets (botões) na AppBar
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh), // Ícone do botão
+            tooltip: 'Recarregar', // Mensagem que aparece ao pressionar e segurar
+            // Chama a mesma função que recarrega os dados
+            onPressed: _reloadData,
+          ),
+        ],
       ),
-
-      body: FutureBuilder<List<Flashcard>>(
-        future: DatabaseHelper().getFlashcardsByFolder(widget.folder.id!),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
-          if (snapshot.data!.isEmpty) return Center(child: Text('No flashcard to show.'));
-
-          if (itens.isEmpty) {
-
-            itens = snapshot.data!.map((fc) {
-              final front = fc.frontText;
-              final back = fc.backText;
-
-              return FlashCard(
-                width: screen.width * 0.9,
-                height: screen.height * 0.5,
-                frontWidget: () => Container(
-                  decoration: BoxDecoration(
-                    color: UserPreferencesService.getThemeColor(),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Center(
-                    child: Text(front, style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    )),
-                  ),
-                ),
-                backWidget: () => Container(
-                  decoration: BoxDecoration(
-                    color: Color.lerp(UserPreferencesService.getThemeColor(), Colors.white, 0.3),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Center(
-                    child: Text(back, style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    )),
-                  ),
-                ),
-              );
-            }).toList();
-
-
-
-            indexFlashcards = itens.length >= 3 ? 3 : itens.length;
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _itens.isEmpty
+          ? const Center(child: Text('Nenhum flashcard para mostrar.'))
+          : SwipeableCardsSection(
+        cardController: _controller,
+        context: context,
+        items: _itens.length >= 3 ? _itens.sublist(0, 3) : _itens,
+        enableSwipeUp: true,
+        enableSwipeDown: true,
+        onCardSwiped: (dir, index, widget) {
+          if (_indexFlashcards < _itens.length) {
+            _controller.addItem(_itens[_indexFlashcards]);
+            _indexFlashcards++;
           }
-
-          return  SwipeableCardsSection(
-                cardController: controller,
-                context: context,
-                items: itens.length >= 3 ? itens.sublist(0, 3) : itens,
-                enableSwipeUp: true,
-                enableSwipeDown: true,
-                onCardSwiped: (dir, index, widget) {
-                  if(indexFlashcards < itens.length){
-                    controller.addItem(itens[indexFlashcards]);
-                    indexFlashcards++;
-                  }
-                  setState(() {});
-                },
-            );
         },
       ),
-
       floatingActionButton: FloatingActionButton(
         backgroundColor: UserPreferencesService.getThemeColor(),
         foregroundColor: Colors.white,
-        child: Icon(Icons.add),
-        tooltip: 'Add a flashcard',
+        child: const Icon(Icons.add),
+        tooltip: 'Adicionar flashcard',
         onPressed: () async {
-          await Navigator.push(
+          // Navega para a tela de criação e AGUARDA um resultado
+          final result = await Navigator.push(
             context,
             MaterialPageRoute(
               builder: (_) => CreateFlashcardPage(folder: widget.folder),
             ),
           );
 
-          setState(() {}); // Rebuild the screen after adding
+          // Se o resultado for 'true', recarrega os dados
+          if (result == true) {
+            _reloadData();
+          }
         },
       ),
-
     );
   }
 }
@@ -175,7 +174,7 @@ class CreateFlashcardPage extends StatelessWidget {
                     folderId: folder.id!,
                   )
               );
-              Navigator.pop(context);
+              Navigator.pop(context, true);
             },
           )
         ]),
