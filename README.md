@@ -62,6 +62,21 @@
  > Garantir disponibilidade nos períodos de uso ativo.
 
 
+## ⚙️ Como rodar o projeto
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/flashedu.git
+cd flashedu/FlashEdu/flashedu
+```
+   
+2. Va para a pasta chechpoink app instale as dependências e execute o aplicativo:
+```bash
+flutter pub get
+flutter run
+```
+
+
 # Documentação da Arquitetura – FlashEdu
 
 ## (i) Escolhas de Tecnologias
