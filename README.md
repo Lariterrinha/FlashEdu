@@ -6,19 +6,11 @@
 * Dart 3.7.0
 * DevTools 2.42.2
 * Um emulador Android/iOS ou um dispositivo físico
- 
+
+    
  ## Objetivo Geral:
 Desenvolver um aplicativo móvel de perguntas e respostas (trivia) e flashcards personalizados, que promova a educação de qualidade de forma acessível, dinâmica e divertida. O app utilizará a Open Trivia Database API para fornecer questões personalizadas e contará com um módulo de flashcards que permite aos usuários criar, organizar e revisar conteúdos em pastas temáticas, estimulando a memorização e o aprendizado ativo. Essa abordagem está alinhada ao ODS 4: Educação de Qualidade, incentivando o estudo contínuo e interativo por meio da tecnologia.
  
- ## 🌱 Relação com os Objetivos de Desenvolvimento Sustentável (ODS)
-
-O projeto FlashEdu está diretamente alinhado a iniciativas de impacto social e educacional, especialmente com:
-
-### 🎓 ODS 4 – Educação de Qualidade  
-**Assegurar a educação inclusiva e equitativa de qualidade, e promover oportunidades de aprendizagem ao longo da vida.**  
-> O aplicativo incentiva estudantes a aprender de forma lúdica e autônoma, explorando conteúdos por meio de quizzes e flashcards, tornando o conhecimento mais acessível, interativo e memorável.
-
-Saiba mais sobre os ODS: [https://brasil.un.org/pt-br/sdgs](https://brasil.un.org/pt-br/sdgs)
 
  ## Definição do Problema
  Apesar do crescente acesso à tecnologia, muitos estudantes ainda enfrentam dificuldades em manter o interesse e a retenção do conteúdo escolar. A falta de interatividade nos métodos tradicionais de ensino pode contribuir para a desmotivação.
@@ -33,7 +25,18 @@ Saiba mais sobre os ODS: [https://brasil.un.org/pt-br/sdgs](https://brasil.un.or
  **Front-end:** Interface intuitiva e interativa para o usuário.
  
  **Back-end:** Integração com a Open Trivia Database API para obter as questões, gerenciamento de pontuações, progresso e flashcards (armazenados localmente).
- 
+
+
+ ## 🌱 Relação com os Objetivos de Desenvolvimento Sustentável (ODS)
+
+O projeto FlashEdu está diretamente alinhado a iniciativas de impacto social e educacional, especialmente com:
+
+### 🎓 ODS 4 – Educação de Qualidade  
+**Assegurar a educação inclusiva e equitativa de qualidade, e promover oportunidades de aprendizagem ao longo da vida.**  
+> O aplicativo incentiva estudantes a aprender de forma lúdica e autônoma, explorando conteúdos por meio de quizzes e flashcards, tornando o conhecimento mais acessível, interativo e memorável.
+
+Saiba mais sobre os ODS: [https://brasil.un.org/pt-br/sdgs](https://brasil.un.org/pt-br/sdgs)
+
  # Requisitos da Aplicação
  ### Requisitos Funcionais
  
