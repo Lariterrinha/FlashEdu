@@ -40,9 +40,6 @@ Saiba mais sobre os ODS: [https://brasil.un.org/pt-br/sdgs](https://brasil.un.or
  # Requisitos da Aplicação
  ### Requisitos Funcionais
  
- **Gerenciamento de Perfil:**
- 
- > Edição de perfil e preferencias do usuário.
  
  **Módulo Trivia:**
  > Consumir a Open Trivia Database API (https://opentdb.com/api_config.php) para exibir perguntas em múltipla escolha.
