@@ -227,7 +227,7 @@ A escolha de Flutter e SQLite também contribui para um desenvolvimento ágil e 
 │
 └───Videos  (Contém os vídeos de detalhes do projeto.)
     │   Desenvolvimento_1.mp4
-    │   README.md
+    │   README.md (Contem links de videos explicando sobre o aplicativo entregas e sprints)
     │
     └───gif
             emptyfolder.gif
