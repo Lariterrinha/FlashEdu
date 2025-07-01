@@ -8,9 +8,18 @@
 * Um emulador Android/iOS ou um dispositivo físico
  
  ## Objetivo Geral:
- Desenvolver um aplicativo móvel de perguntas e respostas (trivia) que promova a educação de qualidade, alinhado ao ODS 4: Educação de Qualidade. O app utilizará a Open Trivia Database API para fornecer questões personalizadas e interativas, estimulando o aprendizado de forma divertida e dinâmica.
+Desenvolver um aplicativo móvel de perguntas e respostas (trivia) e flashcards personalizados, que promova a educação de qualidade de forma acessível, dinâmica e divertida. O app utilizará a Open Trivia Database API para fornecer questões personalizadas e contará com um módulo de flashcards que permite aos usuários criar, organizar e revisar conteúdos em pastas temáticas, estimulando a memorização e o aprendizado ativo. Essa abordagem está alinhada ao ODS 4: Educação de Qualidade, incentivando o estudo contínuo e interativo por meio da tecnologia.
  
- 
+ ## 🌱 Relação com os Objetivos de Desenvolvimento Sustentável (ODS)
+
+O projeto FlashEdu está diretamente alinhado a iniciativas de impacto social e educacional, especialmente com:
+
+### 🎓 ODS 4 – Educação de Qualidade  
+**Assegurar a educação inclusiva e equitativa de qualidade, e promover oportunidades de aprendizagem ao longo da vida.**  
+> O aplicativo incentiva estudantes a aprender de forma lúdica e autônoma, explorando conteúdos por meio de quizzes e flashcards, tornando o conhecimento mais acessível, interativo e memorável.
+
+Saiba mais sobre os ODS: [https://brasil.un.org/pt-br/sdgs](https://brasil.un.org/pt-br/sdgs)
+
  ## Definição do Problema
  Apesar do crescente acesso à tecnologia, muitos estudantes ainda enfrentam dificuldades em manter o interesse e a retenção do conteúdo escolar. A falta de interatividade nos métodos tradicionais de ensino pode contribuir para a desmotivação.
  
@@ -23,7 +32,7 @@
  
  **Front-end:** Interface intuitiva e interativa para o usuário.
  
- **Back-end:** Integração com a Open Trivia Database API para obter as questões, gerenciamento de pontuações, progresso e flashcards (armazenados localmente ou por meio de um serviço em nuvem gratuito, como o Firebase).
+ **Back-end:** Integração com a Open Trivia Database API para obter as questões, gerenciamento de pontuações, progresso e flashcards (armazenados localmente).
  
  # Requisitos da Aplicação
  ### Requisitos Funcionais
@@ -142,6 +151,12 @@ O **C4 Model** foi adotado por ser uma abordagem clara e incremental para modela
 - Um **detalhamento dos componentes internos** (Nível 3), essencial para planejar e organizar a implementação de forma modular e escalável.
 
 A escolha de Flutter e SQLite também contribui para um desenvolvimento ágil e eficiente, com suporte a testes locais, visual atraente e bom desempenho mesmo em dispositivos com hardware modesto.
+
+---
+
+## Plano de Testes
+
+[▶️ Ir para pagina de Testes](https://github.com/Lariterrinha/FlashEdu/tree/main/Testes_de_software)
 
 ---
 
